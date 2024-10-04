@@ -26,7 +26,14 @@ function is_solved(array $boardadam): int {
     foreach ($boardadam as $row) {
         if (in_array(0, $row)) {
             return -1; 
-        }
+        } 
+    }
+
+    if ($boardadam[0][0] !== 0 && $boardadam[0][0] === $boardadam[1][1] && $boardadam[1][1] === $boardadam[2][2]) {
+        return $boardadam[0][0];
+    }
+    if ($boardadam[0][2] !== 0 && $boardadam[0][2] === $boardadam[1][1] && $boardadam[1][1] === $boardadam[2][0]) {
+        return $boardadam[0][2];
     }
 
 
